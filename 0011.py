@@ -30,24 +30,11 @@ for y in range(3,20):
         largest=max(largest, grid[y][x]*grid[y-1][x]*grid[y-2][x]*grid[y-3][x])
 
 print("Current largest: ",largest)
-print("Looking downwards")
-
-for y in range(0,16):
-    for x in range(20):
-        largest=max(largest, grid[y][x]*grid[y+1][x]*grid[y+2][x]*grid[y+3][x])
-
-print("Current largest: ",largest)
 print("Looking left")
 
 for y in range(20):
     for x in range(3,20):
         largest=max(largest, grid[y][x]*grid[y][x-1]*grid[y][x-2]*grid[y][x-3])
-
-print("Current largest: ",largest)
-print("Looking right")
-for y in range(20):
-    for x in range(16):
-        largest=max(largest, grid[y][x]*grid[y][x+1]*grid[y][x+2]*grid[y][x+3])
 
 print("Current largest: ",largest)
 print("Looking Left up")
@@ -60,17 +47,5 @@ print("Looking Right up")
 for y in range(3,20):
     for x in range(16):
         largest=max(largest, grid[y][x]*grid[y-1][x+1]*grid[y-2][x+2]*grid[y-3][x+3])
-
-print("Current largest: ",largest)
-print("Looking Right down")
-for y in range(16):
-    for x in range(16):
-        largest=max(largest, grid[y][x]*grid[y+1][x+1]*grid[y+2][x+2]*grid[y+3][x+3])
-
-print("Current largest: ",largest)
-print("Looking Left down")
-for y in range(16):
-    for x in range(3,20):
-        largest=max(largest, grid[y][x]*grid[y+1][x-1]*grid[y+2][x-2]*grid[y+3][x-3])
 
 print("Largest: ",largest)
