@@ -16,7 +16,7 @@ def prime(hi):
             yield n
 
 def factorOutGenerator(n):
-    for d in range(1,n//2+1):
+    for d in prime(n//2+1):
         if n==1:
             return
         while n % d == 0:
