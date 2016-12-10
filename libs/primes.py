@@ -15,8 +15,8 @@ def prime(hi):
             primes.append(n)
             yield n
 
-def factorOutFactory(n):
-    for d in prime(n//2+1):
+def factorOutGenerator(n):
+    for d in range(1,n//2+1):
         if n==1:
             return
         while n % d == 0:
@@ -24,6 +24,6 @@ def factorOutFactory(n):
             n //= d
 
 def factorOut(n):
-    return list(factorOutFactory(n))
+    return list(factorOutGenerator(n))
 
 
