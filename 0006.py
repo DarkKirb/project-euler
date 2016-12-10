@@ -5,6 +5,6 @@
 #(1 + 2 + ... + 10)² = 55² = 3025
 #Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
 #Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
-sumofsquares=sum([i**2 for i in range(101)])
+sumofsquares=sum((i**2 for i in range(101)))
 squareofsum=sum(range(101))**2
 print(squareofsum,"-",sumofsquares,"=",squareofsum-sumofsquares)

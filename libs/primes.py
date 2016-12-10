@@ -1,20 +1,29 @@
 import math
-def prime(n):
-    p = [True] * n
-    for i in range(2,n):
-        if not p[i]: continue
-        for j in range(i+i, n, i):
-            p[j] = False
-        yield i
+def prime(hi):
+    #Not designed to be fast.
+    primes=[2]
+    yield 2
+    for n in range(3,hi):
+        upper=int(math.sqrt(n))
+        out = False
+        for d in primes:
+            if d > upper:
+                break
+            if not n%d:
+                out = True
+        if not out:
+            primes.append(n)
+            yield n
+
 def factorOutFactory(n):
-    for d in primes(n//2+1):
+    for d in prime(n//2+1):
         if n==1:
             return
         while n % d == 0:
             yield d
             n //= d
 
-def factorOut(num):
+def factorOut(n):
     return list(factorOutFactory(n))
 
 
