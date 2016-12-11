@@ -16,13 +16,16 @@ def prime(hi):
             yield n
 
 def factorOutGenerator(n):
-    for d in prime(n//2+1):
-        if n==1:
+    for d in prime(n+1):
+        if n<=1:
             return
         while n % d == 0:
             yield d
             n //= d
-
+def divisorGenerator(n):
+    for d in range(1,n):
+        if n % d == 0:
+            yield d
 def factorOut(n):
     return list(factorOutGenerator(n))
 
