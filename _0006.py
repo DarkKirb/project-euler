@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# cython: language_level=3
 #The sum of the squares of the first ten natural numbers is,
 #1² + 2² + ... + 10² = 385
 #The square of the sum of the first ten natural numbers is,

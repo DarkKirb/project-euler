@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# cython: language_level=3
 #The following iterative sequence is defined for the set of positive integers:
 #n → n/2 (n is even)
 #n → 3n + 1 (n is odd)

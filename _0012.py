@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# cython: language_level=3
 from libs import primes
 import math
 i=2
