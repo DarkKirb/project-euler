@@ -6,7 +6,7 @@ number="731671765313306249192251196744265747423553491949349698352031277450632623
 import functools
 maxvalue=0
 for i in range(1001-13):
-    digits = [i for i in list(number[i:i+13])]
+    digits = [n for n in list(number[i:i+13])]
     maxvalue = max(maxvalue, functools.reduce(lambda x, y: int(x)*int(y), digits))
 
 print(maxvalue)
