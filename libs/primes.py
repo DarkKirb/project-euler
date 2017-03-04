@@ -1,11 +1,14 @@
 import math
-
+primes=[2]
 
 def prime(hi):
     # Not designed to be fast.
-    primes = [2]
-    yield 2
-    for n in range(3, hi):
+    global primes
+    for n in primes:
+        if n >= hi:
+            return
+        yield n
+    for n in range(primes[-1]+1, hi):
         upper = int(math.sqrt(n))
         out = False
         for d in primes:
@@ -16,6 +19,14 @@ def prime(hi):
         if not out:
             primes.append(n)
             yield n
+
+def isPrime(n):
+    p=0
+    for p in prime(n+1):
+        pass
+    if p == n:
+        return True
+    return False
 
 
 def factorOutGenerator(n):
