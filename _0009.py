@@ -10,9 +10,9 @@
 def triple(hi):
     for n in range(hi):
         for m in range(n):
-            yield n**2 - m**2, 2*n*m, n**2 + m**2
+            yield n**2 - m**2, 2 * n * m, n**2 + m**2
 
-for a,b,c in triple(10000):
-    if a+b+c == 1000:
-        print(a,"*",b,"*",c,"=",a*b*c)
+for a, b, c in triple(10000):
+    if a + b + c == 1000:
+        print(a, "*", b, "*", c, "=", a * b * c)
         break

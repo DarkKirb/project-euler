@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # cython: language_level=3
-#By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
-#That is, 3 + 7 + 4 + 9 = 23.
-#Find the maximum total from top to bottom of the triangle below:
-triangle=[
+# By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+# That is, 3 + 7 + 4 + 9 = 23.
+# Find the maximum total from top to bottom of the triangle below:
+triangle = [
     [75],
     [95, 64],
     [17, 47, 82],
@@ -19,12 +19,17 @@ triangle=[
     [91, 71, 52, 38, 17, 14, 91, 43, 58, 50, 27, 29, 48],
     [63, 66, 4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31],
     [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23]]
-#NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
+# NOTE: As there are only 16384 routes, it is possible to solve this
+# problem by trying every route. However, Problem 67, is the same
+# challenge with a triangle containing one-hundred rows; it cannot be
+# solved by brute force, and requires a clever method! ;o)
+
+
 def bruteforce():
     global triangle
-    for y in range(13,-1,-1): #last row is already inited
-        for x in range(y+1):
-            triangle[y][x]+=max(triangle[y+1][x],triangle[y+1][x+1])
+    for y in range(13, -1, -1):  # last row is already inited
+        for x in range(y + 1):
+            triangle[y][x] += max(triangle[y + 1][x], triangle[y + 1][x + 1])
 
 bruteforce()
 print(triangle[0][0])
